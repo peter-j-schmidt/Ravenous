@@ -1,6 +1,7 @@
 import React from 'react';
+import './Business.css';
 
-const business = {
+let business = {
     imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
     name: 'MarginOtto Pizzeria',
     address: '1010 Paddington Way',
@@ -13,10 +14,11 @@ const business = {
 }
 
 class Business extends React.Component {
-    render() {
+    render(){
+       return (
         <div class="Business">
-            <div class="image-container">
-                <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/>
+            <div className="image-container">
+            <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/>
             </div>
             <h2>{business.name}</h2>
             <div className="Business-information">
@@ -26,11 +28,14 @@ class Business extends React.Component {
                     <p>{business.state} {business.zipCode}</p>
                 </div>
                 <div className="Business-reviews">
-                    <h3>ITALIAN</h3>
-                    <h3 className="rating">4.5 stars}</h3>
+                    <h3>{business.category}</h3>
+                    <h3 className="rating">{business.rating} stars</h3>
                     <p>{business.reviewCount} reviews</p>
                 </div>
             </div>
         </div>
+       ) 
     }
 }
+
+export default Business;
